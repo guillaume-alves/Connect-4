@@ -1,7 +1,7 @@
 import java.sql.PseudoColumnUsage;
 import java.util.Arrays;
 import java.util.Locale;
- 
+
 public class Game {
     String[][] gameTab = new String[6][7];
     Player[] playerTab = new Player[2];
