@@ -38,15 +38,27 @@ public class Game {
     }
 
     public int readTab (Player player){
-            for (int i = 0; i <= 6; i++) { line += gameTab[5][i];}
-                if (line.contains("XXXX") || line.contains("OOOO")) {
-                    win=1;
-                }
-        return win;
+        line="";
+        for (int i = 0; i <= 6; i++) {
+            for (int j = 0; j <= 5; j++) {
+                line += gameTab[j][i];
+            }
+            if (line.contains("XXXX") || line.contains("OOOO")) win=1;
         }
 
-        public void printGameTab(){
-            System.out.print("\n     ");
+        line="";
+        for (int i = 0; i <= 5; i++) {
+            for (int j = 0; j <= 6; j++) {
+                line += gameTab[i][j];
+            }
+            if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+        }
+
+        return win;
+    }
+
+    public void printGameTab(){
+        System.out.print("\n     ");
             for (int i = 1; i <= 7; i++) {
                 System.out.print(i + "   ");
             }
