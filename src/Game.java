@@ -37,7 +37,9 @@ public class Game {
         this.move = move;
     }
 
-    public int readTab (Player player){
+    public int readTab (Player player){ //check rows, columns and diagonals for a line of four
+
+        // Check rows
         line="";
         for (int i = 0; i <= 6; i++) {
             for (int j = 0; j <= 5; j++) {
@@ -46,6 +48,7 @@ public class Game {
             if (line.contains("XXXX") || line.contains("OOOO")) win=1;
         }
 
+        // Check columns
         line="";
         for (int i = 0; i <= 5; i++) {
             for (int j = 0; j <= 6; j++) {
@@ -53,6 +56,52 @@ public class Game {
             }
             if (line.contains("XXXX") || line.contains("OOOO")) win=1;
         }
+
+        // Check diagonals from upper left to bottom right
+        line="";
+        line=gameTab[2][0] + gameTab[3][1] + gameTab[4][2] + gameTab[5][3];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[1][0] + gameTab[2][1] + gameTab[3][2] + gameTab[4][3] + gameTab[5][4];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[0][0] + gameTab[1][1] + gameTab[2][2] + gameTab[3][3] + gameTab[4][4] + gameTab[5][5];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[0][1] + gameTab[1][2] + gameTab[2][3] + gameTab[3][4] + gameTab[4][5] + gameTab[5][6];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[0][2] + gameTab[1][3] + gameTab[2][4] + gameTab[3][5] + gameTab[4][6];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[0][3] + gameTab[2][1] + gameTab[1][2] + gameTab[0][3];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        // Check diagonals from upper right to bottom left
+        line="";
+        line=gameTab[4][0] + gameTab[3][1] + gameTab[2][2] + gameTab[1][3] + gameTab[0][4];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[5][0] + gameTab[4][1] + gameTab[3][2] + gameTab[2][3] + gameTab[1][4] + gameTab[0][5];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[5][1] + gameTab[4][2] + gameTab[3][3] + gameTab[2][4] + gameTab[1][5] + gameTab[0][6];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[5][2] + gameTab[4][3] + gameTab[3][4] + gameTab[2][5] + gameTab[1][6];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
+
+        line="";
+        line=gameTab[5][3] + gameTab[4][4] + gameTab[3][5] + gameTab[2][6];
+        if (line.contains("XXXX") || line.contains("OOOO")) win=1;
 
         return win;
     }

@@ -43,6 +43,7 @@ public class Main {
             if (game.win==1) {input.winMessage(player2.getPlayerName()); break;}
 
         } while(game.win == 0);
+        game.printGameTab();
 
     }
 }
