@@ -1,6 +1,4 @@
-import java.sql.PseudoColumnUsage;
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.*;
 
 public class Game {
     String[][] gameTab = new String[6][7];
